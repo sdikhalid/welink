@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "3c2d70fa-6d54-469b-a921-d18399a2e23d",
+		"name": "trial",
+		"description": "\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1855361",
+		"_collection_link": "https://bold-station-596205.postman.co/workspace/NESPRESSO~68cec688-5e90-49d1-a39c-e2c7af5b05b5/collection/1855361-3c2d70fa-6d54-469b-a921-d18399a2e23d?action=share&source=collection_link&creator=1855361"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"id\": 1,\r\n        \"code\": \"ref_1\",\r\n        \"name\": \"spider mane\",\r\n        \"description\": \"desc.....\",\r\n        \"image\": \"http://fake.io/product.png\",\r\n        \"category\": \"toys !\",\r\n        \"price\": 45.21,\r\n        \"number\": 0,\r\n        \"internalReference\": \"ref_internal\",\r\n        \"shellId\": 12,\r\n        \"status\": \"LOWSTOCK\",\r\n        \"rating\": 4,\r\n         \"createdAt\": \"2025-05-13\",\r\n        \"updatedAt\": \"2025-05-13\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProduct",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"id\": 1,\r\n        \"code\": \"ref_1\",\r\n        \"name\": \"spider mane\",\r\n        \"description\": \"desc.....\",\r\n        \"image\": \"http://fake.io/product.png\",\r\n        \"category\": \"toys !\",\r\n        \"price\": 45.21,\r\n        \"number\": 0,\r\n        \"internalReference\": \"ref_internal\",\r\n        \"shellId\": 12,\r\n        \"status\": \"LOWSTOCK\",\r\n        \"rating\": 4,\r\n        \"createdAt\": \"2025-05-13\",\r\n        \"updatedAt\": \"2025-05-13\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "accounts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"id\": 1,\r\n        \"code\": \"ref_1\",\r\n        \"name\": \"spider mane\",\r\n        \"description\": \"desc.....\",\r\n        \"image\": \"http://fake.io/product.png\",\r\n        \"category\": \"toys !\",\r\n        \"price\": 45.21,\r\n        \"number\": 0,\r\n        \"internalReference\": \"ref_internal\",\r\n        \"shellId\": 12,\r\n        \"status\": \"LOWSTOCK\",\r\n        \"rating\": 4,\r\n        \"createdAt\": \"2025-05-13\",\r\n        \"updatedAt\": \"2025-05-13\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/account/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create account",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"batman\",\r\n    \"firstName\": \"hero\",\r\n    \"email\": \"chuck@fake.io\",\r\n    \"password\": \"tst\",\r\n    \"role\": \"CUSTOMER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "my Cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"id\": 1,\r\n        \"code\": \"ref_1\",\r\n        \"name\": \"spider mane\",\r\n        \"description\": \"desc.....\",\r\n        \"image\": \"http://fake.io/product.png\",\r\n        \"category\": \"toys !\",\r\n        \"price\": 45.21,\r\n        \"number\": 0,\r\n        \"internalReference\": \"ref_internal\",\r\n        \"shellId\": 12,\r\n        \"status\": \"LOWSTOCK\",\r\n        \"rating\": 4,\r\n        \"createdAt\": \"2025-05-13\",\r\n        \"updatedAt\": \"2025-05-13\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add/remove line from cart",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/product/2/add/-6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"product",
+								"2",
+								"add",
+								"-6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"Jwt\", pm.response.headers.get(\"Authorization\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n      \"email\": \"chuck@fake.io\",\r\n      \"password\": \"tst\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{Jwt}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Jwt",
+			"value": ""
+		}
+	]
+}
