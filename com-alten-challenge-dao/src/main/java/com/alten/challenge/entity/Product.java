@@ -35,8 +35,4 @@ public class Product {
     private LocalDate createdAt;
     private LocalDate updatedAt;
 
-/*    @ManyToOne
-    @JoinColumn(nullable = false)
-    private Manager manager;*/
-
 }
